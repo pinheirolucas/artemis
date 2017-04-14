@@ -1,13 +1,18 @@
 {
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../out-tsc/app",
-    "module": "es2015",
-    "baseUrl": "",
-    "types": []
-  },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts"
-  ]
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"alwaysStrict": true,
+		"outDir": "../out-tsc/app",
+		"module": "es2015",
+		"baseUrl": "",
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": true,
+		"types": []
+	},
+	"exclude": [
+		"test.ts",
+		"**/*.spec.ts"
+	]
 }
