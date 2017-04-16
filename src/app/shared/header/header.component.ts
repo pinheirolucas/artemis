@@ -14,7 +14,7 @@ export class HeaderComponent {
 	@Output() onLogin: EventEmitter<null>;
 	@Output() onLogout: EventEmitter<null>;
 
-	public placeholder: string;
+	// public placeholder: string;
 	public options: Option[];
 
 	constructor() {
@@ -22,7 +22,7 @@ export class HeaderComponent {
 		this.onLogin = new EventEmitter<null>();
 		this.onLogout = new EventEmitter<null>();
 
-		this.placeholder = "Pesquisar shots";
+		// this.placeholder = "Pesquisar shots";
 		this.options = [
 			{
 				"size": ShotCardSize.SMALL,

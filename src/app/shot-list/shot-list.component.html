@@ -5,5 +5,11 @@
 		[uri]="shot.images.normal"
 		[likes]="shot.likes_count"
 	></artemis-shot-card>
+	<button md-raised-button
+		(click)="loadMore()"
+		*ngIf="(shots | async).length"
+	>
+		Carregar mais
+	</button>
 </div>
 <router-outlet></router-outlet>

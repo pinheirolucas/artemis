@@ -18,11 +18,14 @@ export class ShotListService {
 		this._namespace = "https://api.dribbble.com/v1";
 	}
 
-	public getShotList(): Observable<Shot[]> {
+	public getShotList(page: number = 1, perPage: number = 50): Observable<Shot[]> {
 		const url = `${this._namespace}/shots`;
 		const args: RequestOptionsArgs = {
 			"search": {
-				"access_token": environment.dribbble.token
+				"access_token": environment.dribbble.token,
+				"page": page,
+				"per_page": perPage,
+				"filter": "twitter"
 			}
 		};
 
