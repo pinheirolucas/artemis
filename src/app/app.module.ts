@@ -12,6 +12,7 @@ import { SharedModule } from "./shared/shared.module";
 import { AuthComponent } from "./auth/auth.component";
 import { ShotListComponent } from "./shot-list/shot-list.component";
 import { ShotComponent } from "./shot/shot.component";
+import { StateModule } from "./state/state.module";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ShotComponent } from "./shot/shot.component";
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		SharedModule,
+		StateModule,
 		MaterialModule.forRoot()
 	],
 	providers: [],

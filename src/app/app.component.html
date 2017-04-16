@@ -1,5 +1,8 @@
 <!--<md-progress-bar mode="indeterminate"></md-progress-bar>-->
-<artemis-header></artemis-header>
-<div>
+<artemis-header (onOption)="setCardSize($event)"
+	(onLogout)="handleLogout()"
+	(onLogin)="handleLogin()"
+></artemis-header>
+<div class="container">
 	<router-outlet></router-outlet>
 </div>
