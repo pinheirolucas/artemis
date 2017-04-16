@@ -1,0 +1,43 @@
+<md-toolbar color="primary">
+	<span>Ártemis</span>
+	<span class="spacer"></span>
+	<artemis-search [placeholder]="placeholder"></artemis-search>
+
+	<figure class="img-container is-pointer" [mdMenuTriggerFor]="accountMenu">
+		<img src="/assets/images/me.png" alt="profile picture">
+	</figure>
+	<md-menu #accountMenu="mdMenu">
+		<button md-menu-item disabled>
+			<span>
+				Lucas Pinheiro
+			</span>
+		</button>
+		<button md-menu-item>
+			<span>
+				Sair
+			</span>
+		</button>
+	</md-menu>
+
+
+	<button md-icon-button [mdMenuTriggerFor]="sizeMenu">
+		<md-icon>more_vert</md-icon>
+	</button>
+	<md-menu #sizeMenu="mdMenu">
+		<button md-menu-item>
+			<span>
+				Shots pequenas
+			</span>
+		</button>
+		<button md-menu-item>
+			<span>
+				Shots médias
+			</span>
+		</button>
+		<button md-menu-item>
+			<span>
+				Shots grandes
+			</span>
+		</button>
+	</md-menu>
+</md-toolbar>
