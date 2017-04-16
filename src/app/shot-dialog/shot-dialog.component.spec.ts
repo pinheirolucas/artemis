@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ShotComponent } from "./shot.component";
+import { ShotDialogComponent } from "./shot-dialog.component";
 
-describe("ShotComponent", () => {
-	let component: ShotComponent;
-	let fixture: ComponentFixture<ShotComponent>;
+describe("ShotDialogComponent", () => {
+	let component: ShotDialogComponent;
+	let fixture: ComponentFixture<ShotDialogComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ShotComponent]
+			declarations: [ShotDialogComponent]
 		})
 			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(ShotComponent);
+		fixture = TestBed.createComponent(ShotDialogComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

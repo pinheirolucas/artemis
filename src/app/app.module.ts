@@ -13,6 +13,7 @@ import { AuthComponent } from "./auth/auth.component";
 import { ShotListComponent } from "./shot-list/shot-list.component";
 import { ShotComponent } from "./shot/shot.component";
 import { StateModule } from "./state/state.module";
+import { ShotDialogComponent } from "./shot-dialog/shot-dialog.component";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { StateModule } from "./state/state.module";
 		AppComponent,
 		AuthComponent,
 		ShotListComponent,
-		ShotComponent
+		ShotComponent,
+		ShotDialogComponent
 	],
 	imports: [
 		BrowserModule,
@@ -31,6 +33,9 @@ import { StateModule } from "./state/state.module";
 		SharedModule,
 		StateModule,
 		MaterialModule.forRoot()
+	],
+	entryComponents: [
+		ShotDialogComponent
 	],
 	providers: [],
 	bootstrap: [AppComponent]
