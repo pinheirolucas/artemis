@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 
 @Component({
@@ -6,10 +6,8 @@ import { Component, OnInit } from "@angular/core";
 	templateUrl: "./shot-card.component.html",
 	styleUrls: ["./shot-card.component.sass"]
 })
-export class ShotCardComponent implements OnInit {
-
-	constructor() {	}
-
-	ngOnInit() { }
-
+export class ShotCardComponent {
+	@Input() uri: string;
+	@Input() shotId: number;
+	@Input() likes: number;
 }

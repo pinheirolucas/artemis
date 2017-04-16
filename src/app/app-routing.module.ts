@@ -4,6 +4,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { AuthComponent } from "./auth/auth.component";
 import { ShotListComponent } from "./shot-list/shot-list.component";
 import { ShotComponent } from "./shot/shot.component";
+import { ShotResolver } from "./shot/shot.resolver";
+import { ShotService } from "./shot/shot.service";
 
 
 const routes: Routes = [
@@ -13,7 +15,10 @@ const routes: Routes = [
 		"children": [
 			{
 				"path": ":id",
-				"component": ShotComponent
+				"component": ShotComponent,
+				"resolve": {
+					"shot": ShotResolver
+				}
 			}
 		],
 	},
@@ -31,6 +36,7 @@ const routes: Routes = [
 	imports: [
 		RouterModule.forRoot(routes)
 	],
-	exports: [RouterModule]
+	exports: [RouterModule],
+	providers: [ShotResolver, ShotService]
 })
 export class AppRoutingModule { }
