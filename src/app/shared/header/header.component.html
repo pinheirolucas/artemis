@@ -12,7 +12,7 @@
 				Lucas Pinheiro
 			</span>
 		</button>
-		<button md-menu-item>
+		<button md-menu-item (click)="onLogoutClick()">
 			<span>
 				Sair
 			</span>
@@ -20,23 +20,16 @@
 	</md-menu>
 
 
-	<button md-icon-button [mdMenuTriggerFor]="sizeMenu">
+	<button md-icon-button [mdMenuTriggerFor]="sizeMenu" class="is-hidden-mobile">
 		<md-icon>more_vert</md-icon>
 	</button>
 	<md-menu #sizeMenu="mdMenu">
-		<button md-menu-item>
+		<button md-menu-item
+			*ngFor="let option of options"
+			(click)="onOptionClick(option)"
+		>
 			<span>
-				Shots pequenas
-			</span>
-		</button>
-		<button md-menu-item>
-			<span>
-				Shots médias
-			</span>
-		</button>
-		<button md-menu-item>
-			<span>
-				Shots grandes
+				{{option.label}}
 			</span>
 		</button>
 	</md-menu>

@@ -5,6 +5,7 @@ import { MaterialModule } from "@angular/material";
 
 import { HeaderComponent } from "./header/header.component";
 import { SearchComponent } from "./search/search.component";
+import { ShotCardComponent } from "./shot-card/shot-card.component";
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { SearchComponent } from "./search/search.component";
 		FormsModule,
 		MaterialModule.forRoot()
 	],
-	declarations: [HeaderComponent, SearchComponent],
-	exports: [HeaderComponent]
+	declarations: [HeaderComponent, SearchComponent, ShotCardComponent],
+	exports: [HeaderComponent, ShotCardComponent]
 })
 export class SharedModule { }
