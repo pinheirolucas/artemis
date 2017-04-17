@@ -15,13 +15,13 @@ export class AuthService {
 
 	constructor(http: Http) {
 		this._http = http;
-		this._namespace = "https://dribbble.com/oauth";
+		this._namespace = "https://dribbble.com/oauth/token";
 		this._storageKey = "artemis#access_token";
 		this._token = localStorage.getItem(this._storageKey);
 	}
 
 	public authenticate(code: string): Observable<OAuthResponse> {
-		const url = `${this._namespace}/token`;
+		const url = `${this._namespace}`;
 		const args: RequestOptionsArgs = {
 			"search": {
 				"client_id": environment.dribbble.client,
