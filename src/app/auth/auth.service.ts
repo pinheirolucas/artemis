@@ -22,15 +22,15 @@ export class AuthService {
 
 	public authenticate(code: string): Observable<OAuthResponse> {
 		const url = `${this._namespace}`;
+		const body = `client_id=${environment.dribbble.client}&client_secret=${environment.dribbble.secret}&code=${code}`;
 		const args: RequestOptionsArgs = {
-			"search": {
-				"client_id": environment.dribbble.client,
-				"client_secret": environment.dribbble.secret,
-				"code": code
-			}
+			"withCredentials": true,
+			"headers": new Headers({
+				"Content-Type": "application/x-www-form-urlencoded"
+			})
 		};
 
-		return this._http.post(url, {}, args)
+		return this._http.post(url, body, args)
 			.map(response => response.json());
 	}
 

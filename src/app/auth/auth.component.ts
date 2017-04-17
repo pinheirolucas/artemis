@@ -24,16 +24,19 @@ export class AuthComponent implements OnInit {
 	public ngOnInit() {
 		this._route.queryParams
 			.subscribe(query => {
-				const error: string = query["error"];
 				const code: string = query["code"];
 
-				if (!error || !code) {
-					this._router.navigate(["/shots"]);
+				if (code && !this._authService.isAuthenticated()) {
+					this._authService.authenticate(code)
+						.subscribe(
+							// auth => this._authService.setToken(auth.access_token),
+							response => console.log("sucess", response),
+							error => console.log("error", error)
+						);
 					return;
 				}
 
-				this._authService.authenticate(code)
-					.subscribe(auth => this._authService.setToken(auth.access_token));
+				this._router.navigate(["/shots"]);
 			});
 	}
 
