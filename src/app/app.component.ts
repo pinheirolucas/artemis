@@ -9,6 +9,7 @@ import {
 	SET_CARD_MEDIUM,
 	SET_CARD_LARGE
 } from "./state/reducers/card-size";
+import { environment } from "../environments/environment";
 
 
 @Component({
@@ -32,7 +33,7 @@ export class AppComponent {
 	}
 
 	public handleLogin() {
-		console.log("login");
+		location.assign(environment.dribbble.authorizeUrl);
 	}
 
 	public setCardSize(option: Option) {

@@ -3,22 +3,27 @@
 	<span class="spacer"></span>
 	<!--<artemis-search [placeholder]="placeholder"></artemis-search>-->
 
-	<figure class="img-container is-pointer" [mdMenuTriggerFor]="accountMenu">
-		<img src="/assets/images/me.png" alt="profile picture">
-	</figure>
-	<md-menu #accountMenu="mdMenu">
-		<button md-menu-item disabled>
-			<span>
-				Lucas Pinheiro
-			</span>
-		</button>
-		<button md-menu-item (click)="onLogoutClick()">
-			<span>
-				Sair
-			</span>
-		</button>
-	</md-menu>
+	<div *ngIf="authenticated">
+		<figure class="img-container is-pointer" [mdMenuTriggerFor]="accountMenu">
+			<img [src]="avatar" alt="profile picture">
+		</figure>
+		<md-menu #accountMenu="mdMenu">
+			<button md-menu-item disabled>
+				<span>
+					{{name}}
+				</span>
+			</button>
+			<button md-menu-item (click)="onLogoutClick()">
+				<span>
+					Sair
+				</span>
+			</button>
+		</md-menu>
+	</div>
 
+	<div *ngIf="!authenticated">
+		<button md-button (click)="onLoginClick()">Login</button>
+	</div>
 
 	<button md-icon-button [mdMenuTriggerFor]="sizeMenu" class="is-hidden-mobile">
 		<md-icon>more_vert</md-icon>

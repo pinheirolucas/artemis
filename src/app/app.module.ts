@@ -14,6 +14,7 @@ import { ShotListComponent } from "./shot-list/shot-list.component";
 import { ShotComponent } from "./shot/shot.component";
 import { StateModule } from "./state/state.module";
 import { ShotDialogComponent } from "./shot-dialog/shot-dialog.component";
+import { AuthService } from "./auth/auth.service";
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { ShotDialogComponent } from "./shot-dialog/shot-dialog.component";
 	entryComponents: [
 		ShotDialogComponent
 	],
-	providers: [],
+	providers: [AuthService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

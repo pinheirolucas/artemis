@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { ShotCardSize } from "../shot-card/shot-card.enum";
 
@@ -9,6 +9,10 @@ import { ShotCardSize } from "../shot-card/shot-card.enum";
 	styleUrls: ["./header.component.sass"]
 })
 export class HeaderComponent {
+
+	@Input() authenticated: boolean;
+	@Input() avatar: string;
+	@Input() name: string;
 
 	@Output() onOption: EventEmitter<Option>;
 	@Output() onLogin: EventEmitter<null>;
@@ -44,7 +48,7 @@ export class HeaderComponent {
 	}
 
 	public onLoginClick() {
-		this.onLogout.emit();
+		this.onLogin.emit();
 	}
 
 	public onOptionClick(option: Option) {
