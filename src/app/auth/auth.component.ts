@@ -27,7 +27,7 @@ export class AuthComponent implements OnInit {
 				const error: string = query["error"];
 				const code: string = query["code"];
 
-				if (!error && !code) {
+				if (!error || !code) {
 					this._router.navigate(["/shots"]);
 					return;
 				}
