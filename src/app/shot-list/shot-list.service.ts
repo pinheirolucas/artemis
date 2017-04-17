@@ -24,8 +24,7 @@ export class ShotListService {
 			"search": {
 				"access_token": environment.dribbble.token,
 				"page": page,
-				"per_page": perPage,
-				"filter": "twitter"
+				"per_page": perPage
 			}
 		};
 
