@@ -1,12 +1,35 @@
 # artemis
 
-SPA based on dribbble API.
+A simple dribbble clone.
 
 Live at: [https://artemis-285b4.firebaseapp.com](https://artemis-285b4.firebaseapp.com/).
 
 ## Quick start
 
-<!-- TODO: insert quick start documentation here -->
+Before start hacking, is necessary to run some commands in your workspace directory:
+
+```bash
+# clone the repository
+git clone https://github.com/pinheirolucas/artemis.git
+
+# go to the repo directory
+cd ./artemis
+
+# install npm dependencies
+npm install
+
+# run in development mode
+npm start
+```
+
+## Stack
+
+To be abble to make this project I used the following technologies:
+
+- [Angular 4](https://angular.io/);
+- [Angular CLI](https://cli.angular.io/): for application scaffolding;
+- [Bulma](http://bulma.io/): for flex-box based layout;
+- [ngrx store](https://github.com/ngrx/store): for reactive programming;
 
 ## Prototypes
 
