@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Http, Headers, RequestOptionsArgs } from "@angular/http";
 import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/map";
 
 import { environment } from "../../environments/environment";
 import { OAuthResponse } from "./auth.model";
@@ -22,22 +23,29 @@ export class AuthService {
 
 	public authenticate(code: string): Observable<OAuthResponse> {
 		const url = `${this._namespace}`;
+		const body = `client_id=${environment.dribbble.client}&client_secret=${environment.dribbble.secret}&code=${code}`;
 		const args: RequestOptionsArgs = {
-			"search": {
-				"client_id": environment.dribbble.client,
-				"client_secret": environment.dribbble.secret,
-				"code": code
-			}
+			"withCredentials": true,
+			"headers": new Headers({
+				"Content-Type": "application/x-www-form-urlencoded"
+			})
 		};
 
-		return this._http.post(url, {}, args)
+		return this._http.post(url, body, args)
 			.map(response => response.json());
 	}
 
-	public setToken(token: string) {
+	public login(token: string) {
 		if (!this._token) {
 			this._token = token;
 			localStorage.setItem(this._storageKey, this._token);
+		}
+	}
+
+	public logout() {
+		if (this.isAuthenticated()) {
+			this._token = null;
+			localStorage.removeItem(this._storageKey);
 		}
 	}
 

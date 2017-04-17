@@ -5,7 +5,7 @@
 
 	<div *ngIf="authenticated">
 		<figure class="img-container is-pointer" [mdMenuTriggerFor]="accountMenu">
-			<img [src]="avatar" alt="profile picture">
+			<img [src]="avatar" alt="profile picture" *ngIf="avatar">
 		</figure>
 		<md-menu #accountMenu="mdMenu">
 			<button md-menu-item disabled>

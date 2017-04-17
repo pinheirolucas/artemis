@@ -1,6 +1,9 @@
 <artemis-header (onOption)="setCardSize($event)"
 	(onLogout)="handleLogout()"
 	(onLogin)="handleLogin()"
+	[authenticated]="authenticated | async"
+	[avatar]="user.avatar_url"
+	[name]="user.name"
 ></artemis-header>
 <div class="container">
 	<router-outlet></router-outlet>
