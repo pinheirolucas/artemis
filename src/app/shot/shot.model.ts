@@ -22,3 +22,8 @@ export interface User {
 	name: string;
 	avatar_url: string;
 }
+
+export interface Like {
+	id: number;
+	created_at: string;
+}

@@ -13,7 +13,10 @@
 	<md-card-content>
 		<div [innerHtml]="shot.description"></div>
 		<p class="actions is-unselectable">
-			<md-icon class="is-pointer">favorite</md-icon>
+			<md-icon class="is-pointer"
+				*ngIf="liked" (click)="unlike()">favorite</md-icon>
+			<md-icon class="is-pointer"
+				*ngIf="!liked" (click)="like()">favorite_border</md-icon>
 			{{shot.likes_count}}
 		</p>
 	</md-card-content>
